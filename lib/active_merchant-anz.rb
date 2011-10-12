@@ -1,6 +1,6 @@
 require "active_merchant"
-require "#{__FILE__}/../active_merchant/anz/version"
-require "#{__FILE__}/../active_merchant/billing/gateways/anz"
+require "active_merchant/anz/version"
+require "active_merchant/billing/gateways/anz"
 
 module ActiveMerchant
   module ANZ

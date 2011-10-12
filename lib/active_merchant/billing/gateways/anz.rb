@@ -84,9 +84,12 @@ module ActiveMerchant #:nodoc:
       end
 
       def add_credit_card(params, creditcard)
+        expiry = "#{creditcard.year.to_s[-2,2]}#{sprintf("%.2i", creditcard.month)}"
+        puts expiry
+        puts creditcard.number
         return params.merge!(:vpc_CardNum => creditcard.number,
                              :vpc_CardSecurityCode => creditcard.verification_value,
-                             :vpc_CardExp => "0513")
+                             :vpc_CardExp => "#{expiry}")
       end
 
       def add_amount(params, money)

@@ -1,5 +1,4 @@
 require 'cgi'
-require 'active_support/core_ext/object'
 
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:

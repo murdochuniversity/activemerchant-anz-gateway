@@ -2,7 +2,7 @@ require 'cgi'
 
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
-    class AnzGateway < Gateway
+    class ANZGateway < Gateway
 
       self.supported_countries = ['AU']
       self.supported_cardtypes = [:visa, :master, :american_express, :diners_club]

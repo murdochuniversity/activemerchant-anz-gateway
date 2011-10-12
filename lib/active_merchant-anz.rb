@@ -1,4 +1,5 @@
-require 'activemerchant'
+require 'active_merchant'
+require 'acitve_merchant/billing'
 require 'active_support/core_ext/object'
 
 require "active_merchant-anz/version"

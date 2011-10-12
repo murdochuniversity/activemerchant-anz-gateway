@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock"
 
-  s.add_runtime_dependency "activemerchant", "~ 1.18.1"
-  s.add_runtime_dependency "activesupport", "~ 3.1.1"
+  s.add_runtime_dependency "activemerchant"
+  s.add_runtime_dependency "activesupport"
 end

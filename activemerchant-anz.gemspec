@@ -1,8 +1,7 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "active_merchant/anz/version"
+require File.expand_path("../lib/active_merchant-anz/version", __FILE__)
 
 Gem::Specification.new do |s|
+  s.platform    = Gem::Platform::RUBY
   s.name        = "activemerchant-anz"
   s.version     = ActiveMerchant::ANZ::VERSION
   s.authors     = ["Dirk Kelly"]

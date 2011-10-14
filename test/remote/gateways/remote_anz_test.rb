@@ -11,34 +11,26 @@ class AnzTest < Test::Unit::TestCase
     
     @credit_card_fail = credit_card('1234567812345678',
       :month => Time.now.month,
-      :year => Time.now.year
+      :year  => Time.now.year
     )
     
     @params = {
-      :booking_number => '222222D',
-      :unique_id => 'efad6659cea26be50fe36cbdec91f042',
+      :order_id => 'X123F',
+      :invoice  => '10001',
     }
   end
   
   def test_invalid_amount
-    assert response = @gateway.purchase(Money.new(0), @credit_card_success, @params)
+    assert response = @gateway.purchase(0, @credit_card_success, @params)
     assert_failure response
     assert response.test?
   end
    
   def test_purchase_success_with_verification_value 
-    assert response = @gateway.purchase(Money.new(100), @credit_card_success, @params)
+    assert response = @gateway.purchase(100, @credit_card_success, @params)
     assert_success response
     assert response.test?
   end
-
-#  def test_purchase_with_invalid_verification_value
-#    @credit_card_success.verification_value = 'AAA'
-#    assert response = @gateway.purchase(100, @credit_card_success, @params)
-#    assert_nil response.authorization
-#    assert_failure response
-#    assert response.test?
-#  end
 
   def test_invalid_expiration_date
     @credit_card_success.year = 2005 

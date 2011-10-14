@@ -9,6 +9,7 @@ end
 
 require 'test/unit'
 require 'mocha'
+require 'erb'
 require 'activemerchant'
 require 'activemerchant-anz'
 
@@ -155,7 +156,7 @@ module ActiveMerchant
         
     def load_fixtures
       file = File.exists?(LOCAL_CREDENTIALS) ? LOCAL_CREDENTIALS : DEFAULT_CREDENTIALS
-      yaml_data = YAML.load(File.read(file))
+      yaml_data = YAML.load(ERB.new(File.read(file)).result)
       symbolize_keys(yaml_data)
     
       yaml_data

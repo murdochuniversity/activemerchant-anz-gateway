@@ -3,8 +3,8 @@ require File.expand_path("../lib/active_merchant-anz/version", __FILE__)
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = "activemerchant-anz"
-  s.version     = ActiveMerchant::ANZ::VERSION
-  s.authors     = ["Dirk Kelly"]
+  s.version     = ActiveMerchant::Anz::VERSION
+  s.authors     = ["Anuj Luthra", "Dirk Kelly"]
   s.email       = ["dk@dirkkelly.com"]
   s.homepage    = ""
   s.summary     = %q{Gateway for ANZ and ActiveMerchant}
@@ -18,9 +18,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "vcr"
-  s.add_development_dependency "webmock"
+  s.add_development_dependency "test-unit"
+  s.add_development_dependency "mocha"
 
   s.add_runtime_dependency "activemerchant"
   s.add_runtime_dependency "activesupport"

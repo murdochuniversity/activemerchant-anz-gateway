@@ -7,7 +7,7 @@ require "active_merchant/billing/gateways/anz"
 
 
 module ActiveMerchant
-  module ANZ
+  module Anz
     # Your code goes here...
   end
 end

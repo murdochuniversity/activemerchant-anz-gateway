@@ -2,7 +2,9 @@ require 'cgi'
 
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
-    class ANZGateway < Gateway
+    class AnzGateway < Gateway
+
+      undef_method :capture 
 
       self.supported_countries = ['AU']
       self.supported_cardtypes = [:visa, :master, :american_express, :diners_club]
@@ -85,15 +87,13 @@ module ActiveMerchant #:nodoc:
 
       def add_credit_card(params, creditcard)
         expiry = "#{creditcard.year.to_s[-2,2]}#{sprintf("%.2i", creditcard.month)}"
-        puts expiry
-        puts creditcard.number
         return params.merge!(:vpc_CardNum => creditcard.number,
                              :vpc_CardSecurityCode => creditcard.verification_value,
                              :vpc_CardExp => "#{expiry}")
       end
 
       def add_amount(params, money)
-        params[:vpc_Amount] = amount(money)
+        params[:vpc_Amount] = money.to_i
       end
 
       #ADDS THE AUTHORIZATION NUMBER OF A PREVIOUS TRANSACTION

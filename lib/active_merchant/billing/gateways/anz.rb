@@ -1,4 +1,6 @@
 require 'cgi'
+require 'active_merchant'
+require 'active_merchant/billing'
 
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:

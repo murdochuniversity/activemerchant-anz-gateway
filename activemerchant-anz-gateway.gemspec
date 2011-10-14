@@ -2,7 +2,7 @@ require File.expand_path("../lib/active_merchant-anz/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = "activemerchant-anz-gateway"
+  s.name        = "activemerchant-anz"
   s.version     = ActiveMerchant::Anz::VERSION
   s.authors     = ["Anuj Luthra", "Dirk Kelly"]
   s.email       = ["anuj.luthra@gmail.com", "dk@dirkkelly.com"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Gateway for ANZ and ActiveMerchant}
   s.description = %q{Provides an interface to ANZ for the Activemerchant library, fork of github@anujluthra's work}
 
-  s.rubyforge_project = "activemerchant-anz-gateway"
+  s.rubyforge_project = "activemerchant-anz"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec,features}/*`.split("\n")

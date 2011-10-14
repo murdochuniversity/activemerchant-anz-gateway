@@ -10,7 +10,6 @@ end
 require 'test/unit'
 require 'mocha'
 require 'erb'
-require 'activemerchant'
 require 'activemerchant-anz'
 
 ActiveMerchant::Billing::Base.mode = :test

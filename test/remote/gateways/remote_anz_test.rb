@@ -16,7 +16,7 @@ class AnzTest < Test::Unit::TestCase
     
     @params = {
       :order_id => 'X123F',
-      :invoice  => '10001',
+      :invoice  => '10001'
     }
   end
   

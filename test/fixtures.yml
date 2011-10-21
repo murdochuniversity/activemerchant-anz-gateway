@@ -1,3 +1,0 @@
-anz:
-  merchant_id: <%= ENV['ANZ_MERCHANT'] %>
-  access_code: <%= ENV['ANZ_CODE'] %>

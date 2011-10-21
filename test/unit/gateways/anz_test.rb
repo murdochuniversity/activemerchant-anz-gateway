@@ -2,7 +2,7 @@ require File.expand_path('../../test_helper',File.dirname(__FILE__))
 
 class AnzTest < Test::Unit::TestCase
   def setup
-    @gateway = AnzGateway.new(fixtures(:anz))
+    @gateway = AnzGateway.new({:merchant_id => "TESTANZTEST3", :access_code => "6447E199"})
 
     @credit_card_success = credit_card('5123456789012346',
                                           :month => 5,

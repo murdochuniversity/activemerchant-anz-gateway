@@ -46,12 +46,17 @@ You can manage your anz merchant account over at https://migs.mastercard.com.au/
 
 ## Testing
 
-Anz seem to have removed their public testing profile, I've instead set the fixtures to come from environment variables
+Unfortunately the merchant_id and access_code used by ANZ for testing has proved incompatible with the fixtures (in 1.9.2 at least), converting the string 6447E199 to 6.447e 202.
 
-    export ANZ_MERCHANT=TESTyoumerchantname
-    export ANZ_CODE=youroperatorcode
+For this reason I have embedded the remote merchant_id and access_code directly within the `test/remote/gateways/remote_anz_test.rb` file.
 
-To set up your testing environment you will need to log in as the _Administrator_ using your merchantid prefixed by test. The password will be the same as your production account.
+To run the tests first bundle and then run
+
+    ruby test/remote/gateways/remote_anz_test.rb
+
+and
+
+    ruby test/unit/gateways/anz_test.rb
 
 ## Acknowledgements
 
